@@ -1,0 +1,638 @@
+<html>
+
+<head>
+    <title>Twitter</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .border-box {
+            border: 1px solid rgb(226, 0, 0);
+        }
+
+        #outer-box {
+            display: flex;
+            max-width: 1280px;
+            margin: auto;
+        }
+
+        #left-box {
+            width: 20%;
+        }
+
+        #middle-box {
+            width: 50%;
+        }
+
+        #right-box {
+            width: 30%;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        #logo-icon {
+            font-size: 32px;
+            color: #f7ecec;
+        }
+
+        .left-nav {
+            display: flex;
+            margin-top: 16px;
+        }
+
+        .nav-icon {
+            margin-right: 20px;
+            color: #f5ecec;
+        }
+
+        .nav-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f5eeee;
+        }
+
+        .horz-display {
+            display: flex;
+        }
+
+        #left-arrow-box {
+            width: 10%;
+        }
+
+        #name-box {
+            width: 70%;
+        }
+
+        #follow-box {
+            width: 20%;
+        }
+
+        #following {
+            background-color: #d12f60;
+            border: none;
+            color: rgb(255, 250, 250);
+            padding: 10px;
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        h3,
+        p,
+        h4 {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .blue-icon {
+            color: #d12f60;
+        }
+
+        .tweet-box {
+            padding: 4px;
+            border: 1px solid #4e4646;
+        }
+
+        .tweet-img {
+            width: 10%;
+        }
+
+        .tweet-cont {
+            width: 90%;
+        }
+
+        img {
+            max-width: 80%;
+            border-radius: 50%;
+
+        }
+
+        .bold-span {
+            font-weight: bold;
+        }
+
+        .light-span,
+        .icon-text {
+            color: #9E9E9E;
+        }
+
+        li {
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .t-icon-box {
+            width: 25%;
+        }
+
+        .small-icon {
+            font-size: 16px;
+        }
+
+        .icon-text {
+            font-size: 14px;
+            margin-left: 12px;
+        }
+
+        #happening-box {
+            background-color: #25252c;
+            border-radius: 10px;
+        }
+
+        .happening-item {
+            border-top: 1px solid #1b1b1b;
+            padding: 10px;
+        }
+
+        .small-text {
+            font-size: 12px;
+            color: #9E9E9E;
+        }
+
+        .end-img img {
+            border-radius: 3%;
+            height: 40vh;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+
+        #tweet-box {
+            width: 60%;
+            margin-top: 20px;
+        }
+
+        #tweet-btn {
+            background-color: #d12f60;
+            border: none;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border-radius: 20px;
+
+        }
+
+        .happening-content {
+            width: 80%;
+        }
+
+        .happening-image {
+            width: 20%;
+        }
+
+        .show-more {
+            color: #d12f60;
+        }
+
+        .topic-box {
+            width: 70%;
+        }
+
+        .cross-box {
+            width: 10%;
+            padding-left: 4px;
+            padding-top: 4px;
+        }
+
+        .follow-button {
+            width: 100%;
+            border-radius: 12px;
+            color: #d12f60;
+            padding: 8px;
+            border: 1px solid #d12f60;
+            background-color: rgb(34, 32, 32);
+        }
+
+        .search-bar {
+            border: none;
+            color: rgb(99, 94, 94);
+            outline: none;
+            border-radius: 20px;
+            background-color: rgb(34, 32, 32);
+            margin-left: 10px;
+        }
+
+        .search-bar-box {
+            background-color: rgb(34, 32, 32);
+            border-radius: 20px;
+            width: 70%;
+            margin: 6px;
+            padding: 10px;
+            margin-left: 50px;
+        }
+
+        .search-nav-icon {
+            color: rgb(99, 94, 94);
+            font-size: 20px;
+            height: 20px;
+            border-radius: 20px;
+        }
+
+        #futter {
+            margin: 15px;
+        }
+
+        .futter {
+            color: rgb(133, 125, 125);
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="outer-box">
+        <div id="left-box" class="inner-box">
+            <div>
+                <span class="material-icons-outlined" id="logo-icon">facebook</span>
+            </div>
+            <div class="left-nav">
+                <span class="material-icons-outlined nav-icon">home</span>
+                <span class="nav-text">Home</span>
+            </div>
+            <div class="left-nav">
+                <span class="material-icons-outlined nav-icon">tag</span>
+                <span class="nav-text">Explore</span>
+            </div>
+            <div class="left-nav">
+                <span class="material-icons-outlined nav-icon">notifications</span>
+                <span class="nav-text">Notification</span>
+            </div>
+            <div class="left-nav">
+                <span class="material-icons-outlined nav-icon">email</span>
+                <span class="nav-text">Messages</span>
+            </div>
+            <div class="left-nav">
+                <span class="material-icons-outlined nav-icon">bookmarks</span>
+                <span class="nav-text">Bookmarks</span>
+            </div>
+            <div class="left-nav">
+                <span class="material-icons-outlined nav-icon">view_list</span>
+                <span class="nav-text">Lists</span>
+            </div>
+            <div class="left-nav">
+                <span class="material-icons-outlined nav-icon">person</span>
+                <span class="nav-text">Profile</span>
+            </div>
+            <div class="left-nav">
+                <span class="material-icons-outlined nav-icon">read_more</span>
+                <span class="nav-text">More</span>
+            </div>
+            <div id="tweet-box">
+                <button id="tweet-btn">Tweet</button>
+            </div>
+        </div>
+        <div id="middle-box" class="inner-box">
+            <div id="middle-top-box" class="horz-display" style="border: 1px solid #524c4c; padding: 4px;">
+                <div id="left-arrow-box">
+                    <span class="material-icons-outlined blue-icon" style="margin-top:4px">arrow_back</span>
+                </div>
+                <div id="name-box">
+                    <h3>Richard Feynman</h3>
+                    <p style="font-size:10px; color: rgb(165, 156, 156);">1,343 Tweets</p>
+                </div>
+                <div id="follow-box">
+                    <button id="following">Following</button>
+                </div>
+            </div>
+            <div style="border: 1px solid #524c4c; padding: 5px;">
+
+            </div>
+            <div style="border: 1px solid #524c4c; padding:15px;">
+                <h4 style="color: #d12f60;">More Topics</h4>
+            </div>
+            <div style="border: 5px solid #242020;">
+
+            </div>
+            <div class="tweet-box horz-display">
+                <div class="tweet-img">
+                    <img src="https://www.tribeofnoise.com/media/images/profile/44398/1475730433.jpg" />
+                </div>
+                <div class="tweet-cont" style="padding-left: 10px;">
+                    <p><span class="bold-span">Richard Fenyman</span> <span class="light-span">@ProfFenyman 23
+                            Mar</span></p>
+                    <ul>
+                        <li>Study Hard</li>
+                        <li>What others think of you is none of your business</li>
+                        <li>Experiment, Fail, Learn and Repeat</li>
+                        <li>Understanding is more important than memorization</li>
+                        <li>Making mistakes is Okay. Learn from your mistakes.</li>
+                        <li>Imagination is important.</li>
+                        <li>Do what interests you the most.</li>
+                        <li>Stay curious.</li>
+                    </ul>
+                    <div class="tweet-icons horz-display">
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                mode_comment
+                            </span>
+                            <span class="icon-text">27</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                repeat
+                            </span>
+                            <span class="icon-text">4.4K</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                favorite_border
+                            </span>
+                            <span class="icon-text">18.3K</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                file_upload
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tweet-box horz-display">
+                <div class="tweet-img">
+                    <img
+                        src="https://i.dailymail.co.uk/i/pix/2016/06/15/08/35482F0900000578-3641721-This_American_man_has_the_same_rugged_dark_brown_locks_and_stron-a-8_1465975703590.jpg" />
+                </div>
+                <div class="tweet-cont" style="padding-left: 10px;">
+                    <p><span class="bold-span">Richard Fenyman</span> <span class="light-span">@ProfFenyman 23
+                            Mar</span></p>
+                    <ul>
+                        <p>The problem is not people being uneducated. <br> The problem is that people are educated just
+                            enough to believe what<br>they have been taught,and not educated enough to question anything
+                            <br> from what they have been taught.
+                        </p>
+                    </ul>
+                    <div class="tweet-icons horz-display">
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                mode_comment
+                            </span>
+                            <span class="icon-text">27</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                repeat
+                            </span>
+                            <span class="icon-text">4.4K</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                favorite_border
+                            </span>
+                            <span class="icon-text">18.3K</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                file_upload
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tweet-box horz-display">
+                <div class="tweet-img">
+                    <img
+                        src="https://popshopdjs.com/wp-content/uploads/2019/07/hairstyle-and-color-generator-elegant-nice-hairstyles-for-men-random-hairstyle-generator-111062-of-random-hairstyle-generator.jpg" />
+                </div>
+                <div class="tweet-cont" style="padding-left: 10px;">
+                    <p><span class="bold-span">Richard Fenyman</span> <span class="light-span">@ProfFenyman 23
+                            Mar</span></p>
+                    <p style="margin: 3px; font-size: 15px;">Things that Schools should tech:</p>
+                    <ul>
+                        <li>Study Hard</li>
+                        <li>What others think of you is none of your business</li>
+                        <li>Experiment, Fail, Learn and Repeat</li>
+                        <li>Understanding is more important than memorization</li>
+                        <li>Making mistakes is Okay. Learn from your mistakes.</li>
+                    </ul>
+                    <div class="tweet-icons horz-display">
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                mode_comment
+                            </span>
+                            <span class="icon-text">27</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                repeat
+                            </span>
+                            <span class="icon-text">4.4K</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                favorite_border
+                            </span>
+                            <span class="icon-text">18.3K</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                file_upload
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tweet-box horz-display">
+                <div class="tweet-img">
+                    <img src="https://pbs.twimg.com/profile_images/879361767914262528/HdRauDM-_400x400.jpg" />
+                </div>
+                <div class="tweet-cont" style="padding-left: 10px;">
+                    <p><span class="bold-span">Richard Fenyman</span> <span class="light-span">@ProfFenyman 23
+                            Mar</span></p>
+
+                    <div class="end-img">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5890b601ebbd1a33c537f1b2/1486744087054-BWGI5P5JY1MHL4O2XWIR/ke17ZwdGBToddI8pDm48kA6eTGDneIH8309mLuah1zJZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIuXzj7GaPFibHSaFk4V1oAjsg36y-Ei5QB7ebMmONDwwKMshLAGzx4R3EDFOm1kBS/Comforting-Lies.jpg"
+                            alt="">
+                    </div>
+
+                    <div class="tweet-icons horz-display">
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                mode_comment
+                            </span>
+                            <span class="icon-text">27</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                repeat
+                            </span>
+                            <span class="icon-text">4.4K</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                favorite_border
+                            </span>
+                            <span class="icon-text">18.3K</span>
+                        </div>
+                        <div class="t-icon-box horz-display">
+                            <span class="material-icons-outlined light-span small-icon">
+                                file_upload
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="right-box" class="inner-box" style="margin-left: 20px;">
+            <div class="search-bar-box">
+                <span class="material-icons-outlined search-nav-icon">search<input class="search-bar" type="text"
+                        placeholder="Search Twitter"></span>
+            </div>
+            <div id="happening-box" style="padding: 8px;">
+                <h4 style="margin-bottom: 10px;">What's Happening</h4>
+
+                <div class="happening-item horz-display">
+                    <div class="happening-content">
+                        <p class="small-text">Covid-19 . LIVE</p>
+                        <p class="bold-span">COVID-19 in India</p>
+                    </div>
+                    <div class="happening-image">
+                        <img style="border-radius: 8px;"
+                            src="https://pbs.twimg.com/semantic_core_img/1255575536824233984/CiLy4der?format=jpg&name=240x240" />
+                    </div>
+                </div>
+                <div class="happening-item">
+                    <p class="small-text">Trending in India</p>
+                    <p class="bold-span">Reha</p>
+                    <p class="small-text">11.6k Tweets</p>
+                </div>
+                <div class="happening-item">
+                    <p class="small-text">Entertainment . Trending</p>
+                    <p class="bold-span">Avengers</p>
+                    <p class="small-text">31.6k Tweets</p>
+                </div>
+
+                <div class="happening-item horz-display">
+                    <div class="happening-content">
+                        <p class="small-text">Covid-19 Yesterday</p>
+                        <p class="bold-span">Sachin Tendulkar hospitalised days after Covid-19 diagnosis</p>
+                    </div>
+                    <div class="happening-image">
+                        <img style="border-radius: 8px;"
+                            src="https://upload.wikimedia.org/wikipedia/commons/2/25/Sachin_Tendulkar_at_MRF_Promotion_Event.jpg" />
+                    </div>
+                </div>
+                <div class="happening-item horz-display">
+                    <div class="happening-content">
+
+                        <p class="small-text">India national news . 2hours ago</p>
+                        <p class="bold-span">Congress shares manipulated <br> video that that appears to show Pm <br>
+                            Modi
+                            waving to an empty field, <br> Alt News and Oplndia report</p>
+                        ​
+                    </div>
+                    <div class="happening-image">
+                        <img style="border-radius: 8px;"
+                            src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/04/pmmodi-apr3-pti-1617370053.jpg" />
+                    </div>
+                </div>
+                <div class="happening-item">
+                    <h3 class="show-more">
+                        Show more
+                    </h3>
+                </div>
+            </div>
+            <div id="happening-box" id="topics-box" style="padding: 8px;margin-top: 10px;">
+                <h4 style="margin-bottom: 10px;">Topics to follow</h4>
+                <div class="happening-item">
+                    <div class="topic-item horz-display">
+                        <div class="topic-box">
+                            <p class="bold-span">Physics</p>
+                            <p class="light-span">Science</p>
+                        </div>
+                        <div class="button-box">
+                            <button class="follow-button">Follow</button>
+                        </div>
+                        <div class="cross-box">
+                            <span class="material-icons-outlined light-span">
+                                clear
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="happening-item">
+                    <div class="topic-item horz-display">
+                        <div class="topic-box">
+                            <p class="bold-span">Venture capital</p>
+                            <p class="light-span">BUSINESS & finance</p>
+                        </div>
+                        <div class="button-box">
+                            <button class="follow-button">Follow</button>
+                        </div>
+                        <div class="cross-box">
+                            <span class="material-icons-outlined light-span">
+                                clear
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="happening-item">
+                    <div class="topic-item horz-display">
+                        <div class="topic-box">
+                            <p class="bold-span">Machine learning</p>
+                            <p class="light-span">Technology</p>
+                        </div>
+                        <div class="button-box">
+                            <button class="follow-button">Follow</button>
+                        </div>
+                        <div class="cross-box">
+                            <span class="material-icons-outlined light-span">
+                                clear
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="happening-item">
+                    <div class="topic-item horz-display">
+                        <div class="topic-box">
+                            <p class="bold-span">FinTech</p>
+                            <p class="light-span">Business & finance</p>
+                        </div>
+                        <div class="button-box">
+                            <button class="follow-button">Follow</button>
+                        </div>
+                        <div class="cross-box">
+                            <span class="material-icons-outlined light-span">
+                                clear
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="happening-item">
+                    <div class="topic-item horz-display">
+                        <div class="topic-box">
+                            <p class="bold-span">Mathematics</p>
+                            <p class="light-span">Field of study</p>
+                        </div>
+                        <div class="button-box">
+                            <button class="follow-button">Follow</button>
+                        </div>
+                        <div class="cross-box">
+                            <span class="material-icons-outlined light-span">
+                                clear
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="happening-item">
+                    <h3 class="show-more">
+                        Show more
+                    </h3>
+                </div>
+            </div>
+            <div id="futter">
+                <p class="futter">Terms of Service Privcy Policy Cookie Policy <br> Ads info More... @2021 Twitter, Inc.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
